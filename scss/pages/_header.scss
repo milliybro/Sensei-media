@@ -1,0 +1,97 @@
+@use "../abstract/mixins" as mxn;
+@use "../abstract/placeholders";
+@use "../abstract/variables" as var;
+
+#navbar{
+   box-shadow: 0px 4px 18px 0px rgba(0, 0, 0, 0.08);
+   position: fixed;
+   width: 100%;
+   z-index: 1;
+   opacity: 0.95;
+   background-color: var.$white-bg-color;
+}
+.navbar{
+   padding-top: 8px;
+   padding-bottom: 7px;
+   @extend %flex;
+   &__logo{
+      img{
+         width: 90%
+      }
+   }
+   &__link{
+      ul{
+         @extend %flex;
+         gap: 32px;
+         li{
+            a{
+               @extend %parag;
+               font-weight: 500;
+               line-height: 24px;
+               font-family: var.$manrope;
+            }
+         }
+      }
+      @media (max-width:950px){
+         display: none;
+      }
+   }
+   &__btn{
+      @extend %flex;
+      >button{
+         @media (max-width:650px){
+            display: none;
+         }
+         @include mxn.btn(14, 35, 16, 9);
+         a{
+            color: #fff;
+         }
+
+      }
+   }
+}
+
+.hamburger {
+   display: none;
+   @media (max-width:950px){
+      display: inline-block;
+      padding-left: 24px;
+      cursor: pointer;
+   }
+}
+#navbar-responsive {
+   @extend %res;
+   .res-nav-list {
+      list-style-type: none;
+   }
+   .res-nav-item {
+      margin: 30px 0px;
+      text-align: center;
+   }
+   .res-nav-link {
+      font-size: 30px;
+      color: #000;
+      text-decoration: none;
+      font-weight: bold;
+   }
+   .res-nav-btn {
+      @include mxn.btn(14, 24, 16, 9);
+      color:#fff;
+   }
+}
+
+#navbar-close {
+   position: absolute;
+   top: 20px;
+   right: 25px;
+   background-color: transparent;
+   border: none;
+   cursor: pointer;
+}
+
+.navbar-shrink {
+
+   margin-top: -15px;
+   margin-bottom: -25px;
+   box-shadow: 5px 0 10px 3px black;
+}

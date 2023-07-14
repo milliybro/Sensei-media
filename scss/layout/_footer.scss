@@ -1,0 +1,57 @@
+@use "../abstract/mixins" as mxn;
+@use "../abstract/placeholders";
+@use "../abstract/variables" as var;
+
+.footer {
+  // @include mxn.grid(3, 10, 10);
+  @extend %flex;
+  padding-top: 52px;
+  padding-bottom: 60px;
+  @media (max-width:700px){
+   flex-direction: column;
+   text-align: center;
+   gap: 20px;
+  }
+  &__item {
+    p {
+      color: var.$unnamed;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 24px; /* 150% */
+      text-decoration-line: underline;
+      padding-bottom: 22px;
+    }
+    button {
+      @include mxn.btn(14, 40, 16, 9);
+      color: #fff;
+    }
+    ul {
+      h4 {
+        color: var.$unnamed;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 36px; /* 225% */
+        text-transform: uppercase;
+      }
+      li {
+        color: var.$unnamed;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 36px; /* 225% */
+      }
+    }
+  }
+}
+.footer-info {
+  background: #2d2d2d;
+  p {
+    color: #fff;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 36px; /* 257.143% */
+  }
+}

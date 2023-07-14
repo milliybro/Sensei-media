@@ -1,0 +1,98 @@
+@use "../abstract/mixins" as mxn;
+@use "../abstract/placeholders";
+@use "../abstract/variables" as var;
+
+.hero {
+  @include mxn.grid(2);
+  padding-bottom: 90px;
+  @media (max-width: 1035px) {
+    @include mxn.grid(1);
+  }
+  &__left {
+    h2,
+    h1,
+    p {
+      color: var.$unnamed;
+      font-style: normal;
+      line-height: 65px; /* 144.444% */
+    }
+    h2 {
+      padding-top: 108px;
+      font-size: 45px;
+      font-weight: 800;
+    }
+    h1 {
+      font-size: 55px;
+      font-weight: 500;
+      text-transform: uppercase;
+    }
+    p {
+      @extend %parag;
+      padding-top: 14px;
+      padding-bottom: 29px;
+      font-weight: 600;
+      line-height: 24px; /* 150% */
+    }
+    &__btn {
+      button {
+        @include mxn.hero-btn(14, 30, 16, 250);
+        margin-bottom: 10px;
+      }
+    }
+  }
+  &__right {
+    img {
+      padding-top: 82px;
+      width: 100%;
+    }
+  }
+  &__box {
+    padding: 40px 55px;
+    border-radius: 20px;
+    background: #fff;
+    box-shadow: 0px 4px 18px 0px rgba(0, 0, 0, 0.08);
+    @media (max-width:950px){
+      padding: 20px 25px;
+    }
+    h2 {
+      color: var.$unnamed;
+      font-size: 38px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 48px; /* 126.316% */
+      text-transform: uppercase;
+      padding-bottom: 35px;
+    }
+    &__item {
+      @extend %flex;
+      @media (max-width:950px){
+         flex-direction: column;
+         gap: 15px;
+      }
+      &__card {
+        h3 {
+          font-size: 40px;
+          font-style: normal;
+          font-weight: 800;
+          line-height: 48px; /* 120% */
+          background: var.$primary-color;
+          background-clip: text;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          padding-bottom: 3px;
+          span {
+            font-size: 30px;
+            font-style: normal;
+            font-weight: 800;
+            line-height: 48px; /* 160% */
+          }
+        }
+        p {
+          //  @extend %parag;
+          font-weight: 500;
+          line-height: 24px; /* 150% */
+        }
+      }
+    }
+  }
+}

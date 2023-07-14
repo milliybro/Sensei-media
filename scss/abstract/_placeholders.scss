@@ -1,0 +1,42 @@
+@use "variables" as var;
+@use "functions" as func;
+
+%title {
+  color: #22343d;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-transform: uppercase;
+}
+
+%card {
+  padding: 15px;
+  border-radius: 5px;
+  background: var.$light-background;
+}
+
+%flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+%parag {
+  color: var.$unnamed;
+  font-family: Manrope;
+  font-size: 16px;
+  font-style: normal;
+}
+%res {
+  position: fixed;
+  background: url(../images/background.png);
+  background: var.$white-bg-color;
+  top: 0;
+  bottom: 0;
+  left: -100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s;
+  opacity: 0.9;
+}

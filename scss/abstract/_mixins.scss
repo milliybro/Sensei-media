@@ -1,0 +1,41 @@
+@use "variables" as var;
+
+@mixin btn($paddingY: 12, $paddingX: 20, $fontSize: 16, $borderRadius: 8) {
+  padding: $paddingY + px $paddingX + px;
+  // border: 1px solid var.$primary-color;
+  border: none;
+  border-radius: $borderRadius + px;
+  font-size: $fontSize + px;
+  background: var.$primary-color;
+  &:hover {
+    background: var.$hero-btn-color;
+  }
+}
+
+@mixin grid($columns: 3, $gapX: 20, $gapY: 20) {
+  display: grid;
+  grid-template-columns: repeat($columns, 1fr);
+  gap: $gapX + px $gapY + px;
+}
+
+@mixin media($size) {
+  @media only screen and (max-width: $size) {
+    @content;
+  }
+}
+
+@mixin hero-btn($paddingY: 12, $paddingX: 20, $fontSize: 16, $borderRadius: 8) {
+  padding: $paddingY + px $paddingX + px;
+  // border: 1px solid var.$primary-color;
+  border: none;
+  border-radius: $borderRadius + px;
+  font-size: $fontSize + px;
+  background: var.$hero-btn-color;
+  color:#fff;
+  &:hover {
+    background: var.$primary-color;
+    a {
+      color: red;
+    }
+  }
+}

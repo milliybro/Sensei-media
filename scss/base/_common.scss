@@ -1,0 +1,56 @@
+@use "../abstract/functions";
+@use "../abstract/variables";
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+.container {
+  // 1400 - 2 * 150 + 2 * 20 = 1140;
+  // max-width: 1140px;
+  max-width: functions.container(1400, 115);
+  // max-width: container(1440, 150, 20);
+  margin-left: auto;
+  margin-right: auto;
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
+button {
+  cursor: pointer;
+}
+a{
+  text-decoration: none;
+}
+li{
+  list-style-type: none;
+}
+main{
+  background: #F7F6FF;
+}
+
+.btn {
+  padding: 11px 18px;
+  border: none;
+  border-radius: 8px;
+  background: #02897a;
+  color: white;
+}
+
+.card {
+  padding: 15px;
+  border-radius: 5px;
+  background: variables.$light-background;
+}
+
+
+#hero{
+  padding-top: 80px;
+}

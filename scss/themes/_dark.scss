@@ -1,0 +1,71 @@
+@use "../abstract/mixins" as mxn;
+@use "../abstract/placeholders";
+@use "../abstract/variables" as var;
+
+#dark-light {
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top-left-radius: 50%;
+  border-bottom-left-radius: 50%;
+  top: 100px;
+  right: 0px;
+  width: 70px;
+  height: 60px;
+  z-index: 10;
+  background-color: rgb(40, 34, 102);
+  transition: 1s;
+  border: none;
+  border-top-right-radius: none;
+  border-bottom-right-radius: none;
+  object-fit: cover;
+}
+.light {
+  #navbar,
+  #hero,
+  #service,
+  #contact,
+  #work,
+  footer {
+    background: linear-gradient(#000, #000) !important;
+    color: white !important;
+  }
+  #navbar,
+  #hero,
+  #service,
+  #contact,
+  #work,
+  footer {
+    h1,
+    h2,
+    h3,
+    h4,
+    p,
+    li,
+    a {
+      color: #fff;
+    }
+  }
+  .hero__box {
+    background: var.$unnamed;
+  }
+  .service__item__card,
+  .service__item__card__head,
+  .item {
+    background: var.$unnamed !important;
+  }
+  .contact {
+    input,
+    textarea {
+      background: var.$unnamed !important;
+      color: #fff;
+      ::placeholder {
+        color: #fff;
+      }
+    }
+  }
+  .item__result{
+   background: rgb(38, 36, 36);
+  }
+}

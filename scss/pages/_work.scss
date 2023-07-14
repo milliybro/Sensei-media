@@ -1,0 +1,105 @@
+@use "../abstract/mixins" as mxn;
+@use "../abstract/placeholders";
+@use "../abstract/variables" as var;
+
+.work {
+  padding-top: 112px;
+  padding-bottom: 90px;
+  h1 {
+    color: var.$unnamed;
+    font-size: 38px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 48px; /* 126.316% */
+    text-transform: uppercase;
+    padding-bottom: 41px;
+  }
+}
+
+.owl-carousel .owl-nav button.owl-next,
+.owl-carousel .owl-nav button.owl-prev {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  font-size: 30px;
+  //  border: 1px solid rgba(245, 56, 56, 1);
+  border: none;
+  background-color: transparent;
+  color: var.$primary-color;
+  top: 150px;
+}
+
+.owl-carousel .owl-nav button.owl-next:hover,
+.owl-carousel .owl-nav button.owl-prev:hover {
+  background-color: var.$primary-color;
+  color: white;
+}
+
+.owl-carousel .owl-nav button.owl-prev {
+  left: -20px;
+}
+
+.owl-carousel .owl-nav button.owl-next {
+  right: -20px;
+}
+.item {
+  border-radius: 15px;
+  background: #fff;
+  box-shadow: 0px 4px 18px 0px rgba(0, 0, 0, 0.08);
+  &__hero {
+    padding: 10px 25px;
+    p {
+      color: var.$unnamed;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 26px; /* 162.5% */
+    }
+    .macys {
+      width: 225px !important;
+      padding-bottom: 20px;
+    }
+    .alibaba {
+      width: 105px !important;
+    }
+  }
+  &__result {
+    background: #f3f1fe;
+    padding: 21px 28px;
+    h3 {
+      color: var.$unnamed;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 800;
+      line-height: 26px; /* 144.444% */
+      text-transform: uppercase;
+      padding-bottom: 10px;
+    }
+    &__cards {
+      @extend %flex;
+      &__card {
+      }
+    }
+  }
+  &__system {
+    padding: 24px 28px;
+    h3 {
+      color: var.$unnamed;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 800;
+      line-height: 26px; /* 144.444% */
+      text-transform: uppercase;
+      padding-bottom: 13px;
+    }
+    &__img {
+      display: flex;
+      gap: 20px;
+      img {
+        width: 101px !important;
+        height: auto;
+      }
+    }
+  }
+}

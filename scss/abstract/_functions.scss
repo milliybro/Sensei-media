@@ -1,0 +1,13 @@
+@function container($width, $padding, $mobilePadding: 20) {
+  @return $width - 2 * $padding + 2 * $mobilePadding + px;
+}
+
+@function set-text-color($color){
+  @if (lightness($color) > 50%) {
+    @return $unnamed;
+  }
+
+  @else{
+    @return #ffffff;
+  }
+}

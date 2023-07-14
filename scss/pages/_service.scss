@@ -1,0 +1,104 @@
+@use "../abstract/mixins" as mxn;
+@use "../abstract/placeholders";
+@use "../abstract/variables" as var;
+
+.service {
+  padding-top: 76px;
+  padding-bottom: 90px;
+  h1 {
+    color: var.$unnamed;
+    font-size: 38px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 48px; /* 126.316% */
+    text-transform: uppercase;
+    padding-bottom: 41px;
+  }
+  &__item {
+    @include mxn.grid(5);
+    @media (max-width:1205px){
+      grid-template-columns: repeat(3, 1fr);
+    }
+    @media (max-width:740px){
+      grid-template-columns: repeat(1, 1fr);
+    }
+    padding-bottom: 21px;
+    .service__item__card {
+      border-radius: 15px;
+      background: #fff;
+      box-shadow: 0px 4px 18px 0px rgba(0, 0, 0, 0.08);
+      &__head {
+        border-radius: 15px 15px 0px 0px;
+        background: #77b2d3;
+        box-shadow: 0px 4px 18px 0px rgba(0, 0, 0, 0.08);
+        h2 {
+          color: #fff;
+          text-align: center;
+          font-size: 18px;
+          font-style: normal;
+          font-weight: 800;
+          line-height: 26px; /* 144.444% */
+          text-transform: uppercase;
+          padding: 11px;
+        }
+      }
+      ul {
+        padding: 11px 5px 11px 14px;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        li {
+          color: var.$unnamed;
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 24px; /* 150% */
+          padding-bottom: 11px;
+        }
+      }
+      hr {
+        width: 90%;
+        margin: 0 auto;
+        background: #e2e2e2;
+      }
+      .service__price {
+        @extend %flex;
+        justify-content: flex-start;
+        align-items: start;
+        padding-left: 16px;
+        gap: 10px;
+        padding-top: 11px;
+        padding-bottom: 15px;
+        h2 {
+          font-family: Manrope;
+          font-size: 30px;
+          font-style: normal;
+          font-weight: 800;
+          line-height: 24px; /* 80% */
+          background: var.$primary-color;
+          background-clip: text;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
+        h4 {
+          color: #333 !important;
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 24px;
+        }
+      }
+    }
+  }
+}
+.service__item__cards {
+  button {
+    @include mxn.btn(14, 53, 16, 9);
+    display: flex;
+    justify-content: center;
+    margin-top: 21px;
+    margin: 21px auto;
+    a {
+      color: #fff;
+    }
+  }
+}

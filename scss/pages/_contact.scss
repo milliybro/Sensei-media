@@ -1,0 +1,100 @@
+@use "../abstract/mixins" as mxn;
+@use "../abstract/placeholders";
+@use "../abstract/variables" as var;
+
+.contact {
+  @include mxn.grid(2, 10, 10);
+  @media (max-width: 900px) {
+    @include mxn.grid(1, 10, 10);
+  }
+  &__left {
+    h1 {
+      color: var.$unnamed;
+      font-size: 38px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 48px; /* 126.316% */
+      text-transform: uppercase;
+      @media (max-width:400px){
+        font-size: 24px;
+      }
+    }
+    p {
+      padding-top: 22px;
+      color: var.$unnamed;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 26px; /* 162.5% */
+    }
+    form {
+      padding-top: 22px;
+      .form__class {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+        padding-bottom: 20px;
+        @media (max-width:500px){
+          grid-template-columns: repeat(1, 1fr);
+        }
+        input {
+          border-radius: 7px;
+          background: #fff;
+          box-shadow: 0px 4px 18px 0px rgba(0, 0, 0, 0.08);
+          border: none;
+          padding: 16px 19px;
+        }
+      }
+      textarea {
+        border-radius: 7px;
+        background: #fff;
+        box-shadow: 0px 4px 18px 0px rgba(0, 0, 0, 0.08);
+        padding: 16px 19px;
+        width: 100%;
+        border: none;
+      }
+      .form__check {
+        display: flex;
+        padding-top: 20px;
+        gap: 12px;
+        p {
+          color: var.$unnamed;
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 300;
+          line-height: 26px; /* 162.5% */
+        }
+        .check {
+          border-radius: 2px;
+          background: #fff;
+          box-shadow: 0px 4px 18px 0px rgba(0, 0, 0, 0.08);
+          appearance: none;
+          padding: 16px 19px;
+          &::after {
+            content: "";
+            display: inline-block;
+            width: 30px;
+            height: 20px;
+            border-left: 5px solid green;
+            border-bottom: 5px solid green;
+            transform: rotate(-45deg) scale(0);
+            transition: 0.5s;
+          }
+          &:checked:after {
+            transform: rotate(-45deg) scale(1);
+          }
+        }
+      }
+      button {
+        @include mxn.btn(14, 55, 16, 9);
+        color: #fff;
+        margin-top: 23px;
+      }
+    }
+  }
+  &__right {
+    img {
+      width: 100%;
+    }
+  }
+}

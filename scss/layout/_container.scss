@@ -1,0 +1,19 @@
+@use "../abstract/functions" as func;
+@use "../abstract/mixins" as mxn;
+
+.container {
+  max-width: func.container(1400, 115);
+  margin-left: auto;
+  margin-right: auto;
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
+.container-lg {
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-right: 20px;
+  padding-left: 20px;
+  text-align: center;
+}
