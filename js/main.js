@@ -124,3 +124,6 @@ const loading = document.getElementById("loader");
 setTimeout(() => {
   loading.classList.add("loading-none");
 }, 2000);
+
+
+alert("Xush kelibsiz! \nBu sayt MilliyBro tamonidan tayyorlangan \nOK tugmasini bosing");
